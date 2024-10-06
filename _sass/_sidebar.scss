@@ -51,17 +51,17 @@
 
 .sidebar__right {
   margin-bottom: 1em;
-
+  
   @include breakpoint($large) {
-    position: relative;
-    float: right;
+    position: sticky !important;
+    float: right !important;
+    top: 0;
+    right: 0;
     width: $right-sidebar-width-narrow;
-    margin-left: span(0.5 of 12);
+    margin-right: -1 * $right-sidebar-width-narrow;
+    padding-left: 1em;
+    padding-top: 1em !important;
     z-index: 10;
-  }
-
-  @include breakpoint($x-large) {
-    width: $right-sidebar-width;
   }
 }
 
@@ -74,7 +74,7 @@
   vertical-align: top;
   width: 36px;
   // set width only, for non-square avatars
-  //height: 150px;
+  // height: 36px;
 
   @include breakpoint($large) {
     display: block;
@@ -84,7 +84,7 @@
 
   img {
     max-width: 175px;
-    border-radius: 0%;
+    border-radius: 50%;
 
     @include breakpoint($large) {
       padding: 5px;
